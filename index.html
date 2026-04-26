@@ -3,92 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lappeenrannan esittelysivu</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Lappeenrannan esittelysivu - Bootstrap</title>
+    <link href="https://jsdelivr.net" rel="stylesheet">
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; background-color: #f8f9fa; padding-top: 70px; }
+        
+        /* Фиксированная навигация */
+        .navbar-custom { 
+            background: #212529; 
+            padding: 15px; 
+            position: fixed; 
+            top: 0; 
+            width: 100%; 
+            z-index: 1000; 
+            border-bottom: 3px solid #ffc107;
+            display: flex;
+            justify-content: center;
+        }
+        .nav-container { max-width: 1140px; width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 0 15px; }
+        .navbar-brand { font-weight: bold; color: white; text-decoration: none; font-size: 1.5rem; }
+        .nav-links a { color: white; text-decoration: none; margin-left: 20px; font-size: 0.9rem; opacity: 0.8; transition: 0.3s; }
+        .nav-links a:hover { color: #ffc107; opacity: 1; }
+
+        /* Шапка с картинкой из задания */
+        .hero { 
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('historia.jpg') center/cover;
+            color: white; padding: 120px 20px; text-align: center; 
+        }
+        .container { max-width: 1140px; margin: 0 auto; padding: 0 15px; }
+        
+        .section-title { border-left: 5px solid #007bff; padding-left: 15px; margin-bottom: 30px; font-weight: bold; }
+        
+        /* Сетка и карточки */
+        .row-custom { display: flex; flex-wrap: wrap; margin: 30px -15px; }
+        .col-custom { flex: 1; min-width: 300px; padding: 15px; box-sizing: border-box; }
+        .card-custom { 
+            background: white; border-radius: 12px; overflow: hidden; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1); height: 100%; 
+            display: flex; flex-direction: column; text-decoration: none; color: inherit; transition: 0.3s;
+        }
+        .card-custom:hover { transform: translateY(-5px); }
+        .card-img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        .card-title { padding: 15px; text-align: center; font-weight: bold; margin: 0; }
+        
+        .icon-img { height: 70px; width: auto; margin: 20px auto 10px; display: block; object-fit: contain; }
+        footer { background: #212529; color: white; text-align: center; padding: 40px; margin-top: 50px; }
+        hr { border: 0; border-top: 1px solid #dee2e6; margin: 50px 0; }
+        img { max-width: 100%; height: auto; border-radius: 8px; margin-bottom: 20px; }
+    </style>
 </head>
 <body>
 
-<header id="alkuun" class="hero-section">
-    <div class="hero-content">
-        <h1>Tervetuloa Lappeenrannan kotisivulle</h1>
-    </div>
-</header>
-
-<nav class="main-nav">
-    <ul>
-        <li><a href="#alkuun">Alkuun</a></li> 
-        <li><a href="#historia">Lappeenranta</a></li>
-        <li><a href="#matkailu">Matkailu ja nähtävyydet</a></li>
-        <li><a href="#kulttuuri">Kulttuuri ja elämä</a></li>
-        <li><a href="https://lappeenranta.fi" target="_blank">LPR.fi</a></li>
-    </ul>
-</nav>
-
-<main class="paasisalto">
-    <!-- Historia-osio -->
-    <section id="historia" class="tieto-lohko">
-        <h2>Lappeenrannan historia</h2>
-        <img src="historia.jpg" alt="Lappeenrannan historia" class="sisalto-kuva">
-        <p>Lappeenranta (ruots. Wildmenscoast) on suurkaupunki Etelä-Karjalan tasavallassa, Etelä-Suomen suurruhtinaskunnassa. Kaupunki on nykyisin jaettu osaksi Venäjää. Matkaa Lappeenrannasta Helsinkiin on 221 kilometriä, Pendolinolla 442 kilometriä. Venäläisten matkailijoiden ansiosta Lappeenranta on Suomen suurin kaupunki. </p>
-        <p>Lappeenranta suunnitteli naapurikunta Joutsenon vallankaappausta pitkään ja se tapahtui tammikuussa 2009. Samoin Lappeenranta on kaapannut vallan Lauritsalassa, Lappeeessa, Nuijamaalla ja Ylämaalla. Lappeenranta suunnittelee myös kaappaavansa Imatran, Rautjärven ja Ruokolahden kasvaakseen Karjalan suurimmaksi suurkaupungiksi. Nykyisin suositaan lähinnä Kieliopillisesti Oikeaa Kirjoitusasua: "lappeen Ranta".</p>
-    </section>
-
-    <hr>
-
-    <!-- Matkailu-osio -->
-    <section id="matkailu" class="tieto-lohko">
-        <h2>Matkailu ja nähtävyydet</h2>
-        <img src="matkailu.jpg" alt="Matkailu Lappeenrannassa" class="sisalto-kuva">
-        <p>Lappeenrannan vetovoima ei rajoitu vain satamaan, vaan kaupunki on täynnä elämää ympäri vuoden. Linnoituksen historialliset rakennukset ja käsityöläispuodit tarjoavat palan historiaa nykypäivän keskellä. Alueen lukuisat museot ja galleriat esittelevät Karjalan rikasta kulttuuriperintöä, ja kaupungin puistoalueet kutsuvat rentoutumaan luonnon helmaan.</p>
-        <p>Saimaan läheisyys on olennainen osa kaupungin sielua. Voit nauttia rantaraitin upeista maisemista kävellen tai pyöräillen, tai suunnata vesille ja kokea saariston rauhan. Paikallinen torikulttuuri on myös elämys itsessään: nauti vastapaistetuista leivonnaisista ja aidosta karjalaisesta vieraanvaraisuudesta. Lappeenranta yhdistää ainutlaatuisella tavalla kansainvälisen tunnelman ja perinteisen suomalaisen leppoisuuden.</p>   
-        
-        <div class="content">
-            <div class="box">
-                <img src="satama.jpg" alt="Satama">
-                <span class="box-label">Satama</span>
-            </div>
-            <div class="box">
-                <img src="linnoitus.jpg" alt="Linnoitus">
-                <span class="box-label">Linnoitus</span>
-            </div>
-            <div class="box">
-                <img src="canal.jpg" alt="Saimaan kanava">
-                <span class="box-label">Saimaan kanava</span>
+    <nav class="navbar-custom">
+        <div class="nav-container">
+            <a href="#" class="navbar-brand">LAPPEENRANTA</a>
+            <div class="nav-links">
+                <a href="#alkuun">Alkuun</a>
+                <a href="#historia">Lappeenranta</a>
+                <a href="#matkailu">Matkailu ja nähtävyydet</a>
+                <a href="#kulttuuri">Kulttuuri ja elämä</a>
+                <a href="https://lappeenranta.fi" target="_blank" style="background:#ffc107; color:black; padding:5px 10px; border-radius:5px; opacity:1;">LPR.fi</a>
             </div>
         </div>
-    </section>
+    </nav>
 
-    <hr>
-
-    <!-- Kulttuuri-osio -->
-    <section id="kulttuuri" class="tieto-lohko">
-        <h2>Kulttuuri ja elämä</h2>
-        <img src="nature.jpg" alt="Lappeenrannan luonto" class="sisalto-kuva">
-        <p>Lappeenrannan ainutlaatuinen sijainti idän ja lännen kohtauspaikassa on muovannut siitä dynaamisen kaupungin, jossa historia ja moderni teknologia kulkevat käsi kädessä. Linnoituksen historiallinen miljöö tarjoaa upeat puitteet niin rauhallisille kävelyretkille kuin suosituille kesätapahtumille, jotka kokoavat ihmiset yhteen nauttimaan Saimaan rantamaisemista.</p>
-        <p>Vihreät arvot ja kestävä kehitys eivät ole Lappeenrannassa vain sanoja, vaan ne näkyvät kaupunkilaisten arjessa ja innovatiivisissa energiaratkaisuissa. LUT-yliopiston tutkimus- ja kehitystyö tekee kaupungista edelläkävijän ympäristöystävällisessä asuinalueiden kehittämisessä. Kaupunki tarjoaa asukkailleen ja vierailijoilleen puhtaan luonnon, kattavat palvelut ja mahdollisuuden elää tasapainoista elämää järvimaiseman äärellä.</p>
-        
-        <div class="content">
-            <a href="https://saipa.fi" target="_blank" class="box">
-                <img src="saipa.png" alt="SaiPa Logo" class="icon-img">
-                <span class="box-label">Keltamusta sydän</span>
-            </a>
-
-            <a href="https://lappeenranta.fi/fi/kulttuuri-ja-liikunta/lappeenrannan-museot" target="_blank" class="box">
-                <img src="museo-icon.png" alt="Museot Logo" class="icon-img">
-                <span class="box-label">Museot</span>
-            </a>
-
-            <a href="https://saimaanpursiseurat.fi" target="_blank" class="box">
-                <img src="vene-icon.jpg" alt="Purjehdus Logo" class="icon-img">
-                <span class="box-label">Purjehdus</span>
-            </a>
+    <header id="alkuun" class="hero">
+        <div class="container">
+            <h1 class="display-3 fw-bold">Tervetuloa Lappeenrannan kotisivulle</h1>
+            <p class="lead">Saimaan helmi ja Karjalan suurin suurkaupunki</p>
         </div>
-    </section>
-</main>
+    </header>
 
-<footer class="alaviite">
-    <p>&copy; 2026 Lappeenrannan kaupunki - Toteutus: Aleksei Krotkov</p>
-</footer>
+    <main class="container py-5">
+        
+        <!-- Lappeenrannan historia -->
+        <section id="historia">
+            <h2 class="section-title">Lappeenrannan historia</h2>
+            <img src="historia.jpg" alt="Historia" style="width:100%; max-height:500px; object-fit:cover; border-radius:12px;">
+            <div class="mt-4">
+                <p>Lappeenranta (ruots. Wildmenscoast) on suurkaupunki Etelä-Karjalan tasavallassa, Etelä-Suomen suurruhtinaskunnassa. Kaupunki on nykyisin jaettu osaksi Venäjää. Matkaa Lappeenrannasta Helsinkiin on 221 kilometriä, Pendolinolla 442 kilometriä. Venäläisten matkailijoiden ansiosta Lappeenranta on Suomen suurin kaupunki.</p>
+                <p>Lappeenranta suunnitteli naapurikunta Joutsenon vallankaappausta pitkään ja se tapahtui tammikuussa 2009. Samoin Lappeenranta on kaapannut vallan Lauritsalassa, Lappeeessa, Nuijamaalla ja Ylämaalla. Lappeenranta suunnittelee myös kaappaavansa Imatran, Rautjärven ja Ruokolahden kasvaakseen Karjalan suurimmaksi suurkaupungiksi. Nykyisin suositaan lähinnä Kieliopillisesti Oikeaa Kirjoitusasua: "lappeen Ranta".</p>
+            </div>
+        </section>
 
+        <hr>
+
+        <!-- Matkailu ja nähtävyydet -->
+        <section id="matkailu">
+            <h2 class="section-title">Matkailu ja nähtävyydet</h2>
+            <img src="matkailu.jpg" alt="Matkailu" style="width:100%; max-height:500px; object-fit:cover; border-radius:12px;">
+            <div class="mt-4 mb-5">
+                <p>Lappeenrannan vetovoima ei rajoitu vain satamaan, vaan kaupunki on täynnä elämää ympäри vuoden. Linnoituksen historialliset rakennukset ja käsityöläispuodit tarjoavat palan historiaa nykypäivän keskellä. Alueen lukuisat museot ja galleriat esittelevät Karjalan rikasta kulttuuriperintöä, ja kaupungin puistoalueet kutsuvat rentoutumaan luonnon helmaan.</p>
+                <p>Saimaan läheisyys on olennainen osa kaupungin sielua. Voit nauttia rantaraitin upeista maisemista kävellen tai pyöräillen, tai suunnata vesille ja kokea saariston rauhan. Paikallinen torikulttuuri on myös elämys itsessään: nauti vastapaistetuista leivonnaisista ja aidosta karjalaisesta vieraanvaraisuudesta. Lappeenranta yhdistää ainutlaatuisella tavalla kansainvälisen tunnelman ja perinteisen suomalaisen leppoisuuden.</p>
+            </div>
+            
+            <div class="row-custom">
+                <div class="col-custom"><div class="card-custom"><img src="satama.jpg" class="card-img"><p class="card-title">Satama</p></div></div>
+                <div class="col-custom"><div class="card-custom"><img src="linnoitus.jpg" class="card-img"><p class="card-title">Linnoitus</p></div></div>
+                <div class="col-custom"><div class="card-custom"><img src="canal.jpg" class="card-img"><p class="card-title">Saimaan kanava</p></div></div>
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- Kulttuuri ja elämä -->
+        <section id="kulttuuri">
+            <h2 class="section-title">Kulttuuri ja elämä</h2>
+            <img src="nature.jpg" alt="Kulttuuri" style="width:100%; border-radius:12px;">
+            <div class="mt-4 mb-5">
+                <p>Lappeenrannan ainutlaatuinen sijainti idän ja lännen kohtauspaikassa on muovannut siitä dynaamisen kaupungin, jossa historia ja moderni teknologia kulkevat käsi kädessä. Linnoituksen historiallinen miljöö tarjoaa upeat puitteet niin rauhallisille kävelyretkille kuin suosituille kesätapahtumille, jotka kokoavat ihmiset yhteen nauttimaan Saimaan rantamaisemista.</p>
+                <p>Vihreät arvot ja kestävä kehitys eivät ole Lappeenrannassa vain sanoja, vaan ne näkyvät kaupunkilaisten arjessa и инновационных энергетических решениях. LUT-yliopiston tutkimus- ja kehitystyö tekee kaupungista edelläkävijän ympäristöystävällisessä asuinalueiden kehittämisessä. Kaupunki tarjoaa asukkailleen ja vierailijoilleen puhtaan luonnon, kattavat palvelut ja mahdollisuuden elää tasapainoista elämää järvimaiseman äärellä.</p>
+            </div>
+
+            <div class="row-custom">
+                <div class="col-custom">
+                    <a href="https://saipa.fi" target="_blank" class="card-custom">
+                        <img src="saipa.png" class="icon-img" alt="SaiPa">
+                        <p class="card-title">Keltamusta sydän</p>
+                    </a>
+                </div>
+                <div class="col-custom">
+                    <a href="https://lappeenranta.fi" target="_blank" class="card-custom">
+                        <img src="museo-icon.png" class="icon-img" alt="Museot">
+                        <p class="card-title">Museot</p>
+                    </a>
+                </div>
+                <div class="col-custom">
+                    <a href="https://saimaanpursiseurat.fi" target="_blank" class="card-custom">
+                        <img src="vene-icon.jpg" class="icon-img" alt="Purjehdus">
+                        <p class="card-title">Purjehdus</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p class="mb-0">&copy; 2026 Lappeenrannan kaupunki - Toteutus: Aleksei Krotkov</p>
+        </div>
+    </footer>
+
+    <script src="https://jsdelivr.net"></script>
 </body>
 </html>
