@@ -3,156 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lappeenrannan esittelysivu</title>
-    <!-- Bootstrap 5 CSS -->
+    <title>Lappeenranta Bootstrap</title>
     <link href="https://jsdelivr.net" rel="stylesheet">
     <style>
-        .hero-section {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('historia.jpg') center/cover no-repeat;
-            color: white;
-            padding: 100px 0;
-            text-align: center;
-        }
-        .sisalto-kuva {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        .card-img-top {
-            height: 200px;
-            object-fit: cover;
-        }
-        section {
-            padding: 60px 0;
-        }
-        .icon-box {
-            transition: transform 0.3s;
-            text-decoration: none;
-            color: inherit;
-        }
-        .icon-box:hover {
-            transform: translateY(-5px);
-            color: inherit;
-        }
+        .hero { background: #343a40; color: white; padding: 60px 0; text-align: center; }
+        img { max-width: 100%; height: auto; border-radius: 8px; }
+        section { padding: 40px 0; }
     </style>
 </head>
-<body data-bs-spy="scroll" data-bs-target="#main-nav">
-
-<nav id="main-nav" class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
-    <div class="container">
-        <a class="navbar-brand fw-bold" href="#">Lappeenranta</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="#alkuun">Alkuun</a></li>
-                <li class="nav-item"><a class="nav-link" href="#historia">Historia</a></li>
-                <li class="nav-item"><a class="nav-link" href="#matkailu">Matkailu</a></li>
-                <li class="nav-item"><a class="nav-link" href="#kulttuuri">Kulttuuri</a></li>
-                <li class="nav-item"><a class="nav-link btn btn-primary btn-sm ms-lg-3 text-white" href="https://lappeenranta.fi" target="_blank">LPR.fi</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
-<header id="alkuun" class="hero-section">
-    <div class="container">
-        <h1 class="display-3 fw-bold">Tervetuloa Lappeenrantaan</h1>
-        <p class="lead">Saimaan rannalla sijaitseva Karjalan helmi</p>
-    </div>
-</header>
-
-<main class="container my-5">
-    <!-- Historia -->
-    <section id="historia">
-        <div class="row align-items-center">
-            <div class="col-lg-6 mb-4 mb-lg-0">
-                <img src="historia.jpg" alt="Lappeenrannan historia" class="sisalto-kuva">
-            </div>
-            <div class="col-lg-6">
-                <h2 class="mb-4">Lappeenrannan historia</h2>
-                <p>Lappeenranta (ruots. Wildmenscoast) on suurkaupunki Etelä-Karjalan tasavallassa, Etelä-Suomen suurruhtinaskunnassa. Kaupunki on nykyisin jaettu osaksi Venäjää. Matkaa Lappeenrannasta Helsinkiin on 221 kilometriä, Pendolinolla 442 kilometriä. Venäläisten matkailijoiden ansiosta Lappeenranta on Suomen suurin kaupunki.</p>
-                <p>Lappeenranta suunnitteli naapurikunta Joutsenon vallankaappausta pitkään ja se tapahtui tammikuussa 2009. Samoin Lappeenranta on kaapannut vallan Lauritsalassa, Lappeeessa, Nuijamaalla ja Yläмаalla.</p>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">LPR</a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="#historia">Historia</a>
+                <a class="nav-link" href="#matkailu">Matkailu</a>
             </div>
         </div>
-    </section>
+    </nav>
 
-    <hr>
-
-    <!-- Matkailu -->
-    <section id="matkailu">
-        <h2 class="text-center mb-5">Matkailu ja nähtävyydet</h2>
-        <div class="row mb-5">
-            <div class="col-12">
-                <img src="matkailu.jpg" alt="Matkailu" class="sisalto-kuva mb-4">
-                <p>Lappeenrannan vetovoima ei rajoitu vain satamaan, vaan kaupunki on täynnä elämää ympäri vuoden. Linnoituksen historialliset rakennukset ja käsityöläispuodit tarjoavat palan historiaa nykypäivän keskellä. Saimaan läheisyys on olennainen osa kaupungin sielua.</p>
-            </div>
+    <header class="hero">
+        <div class="container">
+            <h1>Lappeenranta</h1>
+            <p>Bootstrap-versio</p>
         </div>
-        <div class="row g-4 text-center">
-            <div class="col-md-4">
-                <div class="card h-100 shadow-sm border-0">
-                    <img src="satama.jpg" class="card-img-top" alt="Satama">
-                    <div class="card-body"><h5 class="card-title">Satama</h5></div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card h-100 shadow-sm border-0">
-                    <img src="linnoitus.jpg" class="card-img-top" alt="Linnoitus">
-                    <div class="card-body"><h5 class="card-title">Linnoitus</h5></div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card h-100 shadow-sm border-0">
-                    <img src="canal.jpg" class="card-img-top" alt="Saimaan kanava">
-                    <div class="card-body"><h5 class="card-title">Saimaan kanava</h5></div>
-                </div>
-            </div>
-        </div>
-    </section>
+    </header>
 
-    <hr>
+    <main class="container">
+        <section id="historia" class="row align-items-center">
+            <div class="col-md-6"><img src="historia.jpg" alt="Historia"></div>
+            <div class="col-md-6">
+                <h2>Historia</h2>
+                <p>Lappeenranta on hieno kaupunki Saimaan rannalla.</p>
+            </div>
+        </section>
 
-    <!-- Kulttuuri -->
-    <section id="kulttuuri">
-        <h2 class="text-center mb-5">Kulttuuri ja elämä</h2>
-        <div class="row justify-content-center text-center mb-5">
-            <div class="col-lg-10">
-                <img src="nature.jpg" alt="Luonto" class="sisalto-kuva mb-4">
-                <p>Vihreät arvot ja kestävä kehitys näkyvät kaupunkilaisten arjessa и инновационных энергетических решениях. LUT-yliopiston tutkimus- ja kehitystyö tekee kaupungista edelläkävijän.</p>
-            </div>
-        </div>
-        <div class="row g-4 text-center">
-            <div class="col-md-4">
-                <a href="https://saipa.fi" target="_blank" class="icon-box p-4 border rounded bg-light d-block h-100">
-                    <img src="saipa.png" alt="SaiPa" class="mb-2" style="height: 50px;">
-                    <h6>Keltamusta sydän</h6>
-                </a>
-            </div>
-            <div class="col-md-4">
-                <a href="https://lappeenranta.fi" target="_blank" class="icon-box p-4 border rounded bg-light d-block h-100">
-                    <img src="museo-icon.png" alt="Museot" class="mb-2" style="height: 50px;">
-                    <h6>Museot</h6>
-                </a>
-            </div>
-            <div class="col-md-4">
-                <a href="https://saimaanpursiseurat.fi" target="_blank" class="icon-box p-4 border rounded bg-light d-block h-100">
-                    <img src="vene-icon.jpg" alt="Purjehdus" class="mb-2" style="height: 50px;">
-                    <h6>Purjehdus</h6>
-                </a>
-            </div>
-        </div>
-    </section>
-</main>
+        <section id="matkailu" class="row g-4 text-center">
+            <div class="col-md-4"><div class="card p-3 shadow-sm"><img src="satama.jpg" class="mb-2"><h5>Satama</h5></div></div>
+            <div class="col-md-4"><div class="card p-3 shadow-sm"><img src="linnoitus.jpg" class="mb-2"><h5>Linnoitus</h5></div></div>
+            <div class="col-md-4"><div class="card p-3 shadow-sm"><img src="canal.jpg" class="mb-2"><h5>Kanava</h5></div></div>
+        </section>
+    </main>
 
-<footer class="bg-dark text-white py-4 text-center">
-    <div class="container">
-        <p class="mb-0">&copy; 2026 Lappeenrannan kaupunki - Toteutus: Aleksei Krotkov</p>
-    </div>
-</footer>
-
-<script src="https://jsdelivr.net"></script>
+    <footer class="bg-dark text-white text-center py-3">
+        <p>© 2026 Aleksei Krotkov</p>
+    </footer>
 </body>
 </html>
